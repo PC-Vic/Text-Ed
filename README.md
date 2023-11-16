@@ -9,6 +9,9 @@ A simple text editor project with Progressive Web App (PWA) features, data persi
   - [Description](#description)
   - [Features](#features)
   - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Github Link](#github-link)
 
 ## Description
 
@@ -27,5 +30,19 @@ This project is a text editor implemented as a Progressive Web App (PWA). It inc
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/text-editor-starter.git
+   git clone https://github.com/PC-Vic/Text-Ed.git
+
+2. Install dependencies: npm install
+
+## Usage
+
+1. Start the local server: npm run start
+
+## License
+
+This project is licensed under the MIT license.
+
+## Github Link
+
+Github: https://github.com/PC-Vic/Text-Ed
 
