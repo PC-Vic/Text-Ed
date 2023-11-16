@@ -27,4 +27,26 @@ warmStrategyCache({
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
+onst assetsCache = new StaleWhileRevalidate({
+  cacheName: 'assets-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 7 * 24 * 60 * 60, // Cache for 7 days
+    }),
+  ],
+});
+
+
+registerRoute(
+  ({ request }) => request.destination === 'style' || request.destination === 'script' || request.destination === 'image',
+  assetsCache
+);
+
+//  fallback for other routes
+registerRoute(({ request }) => !request.url.includes('/api/'), offlineFallback());
+
+
 registerRoute();
